@@ -10,11 +10,11 @@ before_action :find_place, only: [:show, :edit, :update, :destroy]
   end
 
   def new
-    @place = Place.new
+    @place = current_user.place.build
   end
 
   def create
-    @place = Place.new(place_params)
+    @place = current_user.place.build(place_params)
     if @place.save
       redirect_to root_path
     else
