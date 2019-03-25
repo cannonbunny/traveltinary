@@ -1,0 +1,7 @@
+<h2><%= @place.continent %></h2>
+<h2><%= @place.city %></h2>
+<h2><%= @place.description %></h2>
+
+<%= link_to "back", root_path %>
+<%= link_to "edit", edit_place_path(@place) %>
+<%= link_to "delete", place_path(@place), method: :delete, data: { confirm: "Really? :("} %>

@@ -1,1 +1,5 @@
-<h1>hello travel</h1>
+<% @place.each do |f| %>
+  <h1><%= link_to f.continent, place_path(f) %></h1>
+<% end %>
+
+<%= link_to "Add Place", new_place_path %>
