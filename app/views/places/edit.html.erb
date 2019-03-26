@@ -1,3 +1,8 @@
 <h1>edit travel destination</h1>
 
-<%= render 'form' %>
+<%= simple_form_for @place, html: {multipart: true} do |f| %>
+  <%= select_tag(:country_id, options_for_select(@countries), :prompt => "select country") %>
+  <%= f.input :city %>
+  <%= f.input :description %>
+  <%= f.button :submit %>
+<% end %>

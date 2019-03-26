@@ -1,6 +1,7 @@
 class PlacesController < ApplicationController
 
 before_action :find_place, only: [:show, :edit, :update, :destroy]
+before_action :find_continent, only: [:new, :create, :edit]
 
   def index
     @place = Place.all.order("created_at DESC")
@@ -11,15 +12,12 @@ before_action :find_place, only: [:show, :edit, :update, :destroy]
 
   def new
     @place = current_user.places.build
-    @continents = Continent.all.map{|c| [c.name, c.id]}
-    @countries = Country.all.map{|c| [c.countryname, c.id]}
   end
 
   def create
     @place = current_user.places.build(place_params)
-    @continents.continent_id = params[:continent_id]
-    @countries.country_id = params[:country_id]
-    if @place.save
+    @place.continent_id = params[:continent_id]
+    if @place.save!
       redirect_to root_path
     else
       render 'new'
@@ -27,10 +25,11 @@ before_action :find_place, only: [:show, :edit, :update, :destroy]
   end
 
   def edit
-    @continents = Continent.all.map{|c| [c.name, c.id]}
   end
 
   def update
+    @place.continent_id = params[:continent_id]
+
     if @place.update(place_params)
       redirect_to place_path(@place)
     else
@@ -46,7 +45,11 @@ before_action :find_place, only: [:show, :edit, :update, :destroy]
 private
 
   def place_params
-    params.require(:place).permit(:continent, :country, :city, :description, :continent_id, :country_id)
+    params.require(:place).permit( :city, :description, :continent_id)
+  end
+
+  def find_continent
+    @continents = Continent.all.map{|c| [c.name, c.id]}
   end
 
   def find_place

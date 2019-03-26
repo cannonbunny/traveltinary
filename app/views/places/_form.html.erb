@@ -1,6 +1,5 @@
-<%= simple_form_for @place do |f| %>
-  <%= select_tag(:continent_id, options_for_select(@continents), :prompt => "select continent") %>
-  <%= select_tag(:country_id, options_for_select(@countries), :prompt => "select country") %>
+<%= simple_form_for @place, html: {multipart: true} do |f| %>
+  <%= select_tag(:continent_id, options_for_select(@continents), :prompt => "Select continent") %>
   <%= f.input :city %>
   <%= f.input :description %>
   <%= f.button :submit %>
