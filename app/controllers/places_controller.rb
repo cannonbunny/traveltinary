@@ -4,7 +4,11 @@ before_action :find_place, only: [:show, :edit, :update, :destroy]
 before_action :find_continent, only: [:new, :create, :edit]
 
   def index
-    @place = Place.all.order("created_at DESC")
+    if params[:continent].blank?
+      @place = Place.all.order("created_at DESC")
+    else
+      @place = Place.where(:continent_id => Continent.find_by(name: params[:continent]).id).order("created_at DESC")
+    end
   end
 
   def show
@@ -17,7 +21,7 @@ before_action :find_continent, only: [:new, :create, :edit]
   def create
     @place = current_user.places.build(place_params)
     @place.continent_id = params[:continent_id]
-    if @place.save!
+    if @place.save
       redirect_to root_path
     else
       render 'new'
@@ -45,7 +49,7 @@ before_action :find_continent, only: [:new, :create, :edit]
 private
 
   def place_params
-    params.require(:place).permit( :city, :description, :continent_id)
+    params.require(:place).permit( :city, :description, :continent_id, :image)
   end
 
   def find_continent
