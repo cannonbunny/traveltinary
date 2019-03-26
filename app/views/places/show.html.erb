@@ -1,13 +1,22 @@
 
-<h2><%= @place.continent.name %></h2>
-<h2><%= @place.city %></h2>
-<h2><%= @place.description %></h2>
+<div class="row">
+  <div class="col-md-5">
+    <% if @place.image.url %>
+      <%= image_tag @place.image.url, class:"placeImageShow" %>
+    <% end %>
+  </div>
+  <div class="col-md-7">
+    <h2><%= @place.continent.name %></h2>
+    <h2><%= @place.city %></h2>
+    <h2><%= @place.description %></h2>
+  </div>
+</div>
 
 <div class="links btn-group">
   <% if user_signed_in? %>
     <% if @place.user_id == current_user.id %>
-      <%= link_to "edit", edit_place_path(@place) %>
-      <%= link_to "delete", place_path(@place), method: :delete, data: { confirm: "Really? :("} %>
+      <%= link_to "edit", edit_place_path(@place), class: "btn btn-primary" %>
+      <%= link_to "delete", place_path(@place), method: :delete, data: { confirm: "Really? :("}, class: "btn btn-danger" %>
     <% end %>
 
   <% end %>
