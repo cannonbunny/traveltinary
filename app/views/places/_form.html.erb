@@ -2,8 +2,8 @@
   <%= f.file_field :image %>
   <br>
   <%= select_tag(:continent_id, options_for_select(@continents), :prompt => "Select continent") %>
-  <br>
-  <%= f.input :city, label: "Region/City" %>
-  <%= f.input :description, label: "Itinerary", placeholder: "hello"%>
+  <hr/>
+  <%= f.input :city, label: "Region/City", placeholder: "Example: Vancouver" %>
+  <%= f.input :description, label: "Itinerary", placeholder: "Day 1: ... -> ... -> ..."%>
   <%= f.button :submit, "Add me!", class: "btn btn-primary" %>
 <% end %>

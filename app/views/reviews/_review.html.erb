@@ -1,11 +1,11 @@
 <div class="review">
-  <p><%= review.vote %></p>
-  <p><%= review.comment %></p>
-
-  <% if user_signed_in? %>
+  <p><%= review.comment %>
+    <% if user_signed_in? %>
     <% if review.user_id == current_user.id %>
       <%= link_to "edit", edit_place_review_path(review.place, review), class: "btn btn-primary" %>
       <%= link_to "delete", place_review_path(review.place, review), method: :delete, data: { confirm: "Really? :("}, class: "btn btn-danger" %>
     <% end %>
-  <% end %>
+  <% end %></p>
+
+
 </div>

@@ -15,15 +15,48 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+h1 h4{
+  font-family: 'Noto Sans', sans-serif;
+}
+
+div p {
+  font-family: 'Lora', serif;
+}
+.navbar-default .navbar-brand {
+    color: #63299D;
+    font-weight: bold;
+    font-size: 240%;
+}
+
+hr{
+border: solid #FFCE9E 3px;
+width: 15%;
+border-bottom: none;
+margin: 30px auto 30px auto;
+}
+
+.formGeneration {
+  padding: 5%;
+  background-color: #E2F6FD;
+}
+
+.buttonSpace {
+  margin-top:5%;
+}
+
 img.placeImage {
-  width: 240px;
-  height: auto;
+  width: 200px;
+  height: 150px;
+  border: 3px solid #E2F6FD;
+  border-radius: 5px;
 }
 
 
 img.placeImageShow {
-  width: 400px;
+  width: 80%;
   height: auto;
+  border: 3px solid #E2F6FD;
+  border-radius: 5px;
 }
 
 img.worldImage {

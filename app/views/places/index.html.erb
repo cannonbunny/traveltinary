@@ -1,9 +1,12 @@
 <% if !params[:continent] %>
   <%= render 'titleImg' %>
 <% end %>
+
+<div class="col-md-10 col-md-offset-1">
+
 <h1><%= params[:continent] %></h1>
 <% if @place.count == 0 %>
-  <h1>Please add the first itinerary</h1>
+  <h4>Please add the first itinerary</h4>
 <% else %>
 
   <div class="row">
@@ -12,10 +15,11 @@
         <% if place.image.url %>
           <a href="/places/<%= place.id %>"><%= image_tag place.image.url, class:"placeImage" %></a>
         <% end %>
-        <h1><%= link_to place.city, place_path(place) %></h1>
+        <h4><%= link_to place.city, place_path(place) %></h1>
       </div>
-
     <% end %>
   </div>
 
 <% end %>
+
+</div>
