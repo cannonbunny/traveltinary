@@ -1,7 +1,11 @@
+<% if !params[:continent] %>
+  <%= render 'titleImg' %>
+<% end %>
 <h1><%= params[:continent] %></h1>
 <% if @place.count == 0 %>
   <h1>Please add the first itinerary</h1>
 <% else %>
+
   <div class="row">
     <% @place.each do |place| %>
       <div class="col-md-3">

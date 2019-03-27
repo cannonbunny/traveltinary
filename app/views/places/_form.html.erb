@@ -1,7 +1,9 @@
 <%= simple_form_for @place, html: {multipart: true} do |f| %>
   <%= f.file_field :image %>
+  <br>
   <%= select_tag(:continent_id, options_for_select(@continents), :prompt => "Select continent") %>
-  <%= f.input :city %>
-  <%= f.input :description %>
-  <%= f.button :submit %>
+  <br>
+  <%= f.input :city, label: "Region/City" %>
+  <%= f.input :description, label: "Itinerary", placeholder: "hello"%>
+  <%= f.button :submit, "Add me!", class: "btn btn-primary" %>
 <% end %>

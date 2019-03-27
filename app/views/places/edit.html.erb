@@ -1,9 +1,19 @@
-<h1>edit travel destination</h1>
+<div class="col-md-8 col-md-offset-2">
+  <div class="formGeneration">
+
+<h1>Edit Itinerary ?</h1>
 
 <%= simple_form_for @place, html: {multipart: true} do |f| %>
   <%= f.file_field :image %>
+  <br>
   <%= f.select :continent_id, @continents %>
-  <%= f.input :city %>
-  <%= f.input :description %>
+  <br>
+  <%= f.input :city, label: "Region/City" %>
+  <%= f.input :description, label: "Itinerary" %>
   <%= f.button :submit %>
 <% end %>
+
+
+</div>
+
+</div>

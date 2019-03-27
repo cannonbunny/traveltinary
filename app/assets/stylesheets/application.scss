@@ -20,7 +20,31 @@ img.placeImage {
   height: auto;
 }
 
+
 img.placeImageShow {
   width: 400px;
   height: auto;
+}
+
+img.worldImage {
+  width: 85%;
+  display: block;
+  margin:auto;
+  height: auto;
+}
+nav ul li{ float:left; list-style-type: none; }
+
+.mainImage {
+  position: relative;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.centered {
+  position: absolute;
+  font-size: 1px;
+  top: 50%;
+  left: 55%;
+  transform: translate(-50%, -50%);
 }
