@@ -9,9 +9,15 @@
     <div class="links buttonSpace">
       <% if user_signed_in? %>
         <% if @place.user_id == current_user.id %>
+          <h4>
           <%= link_to "edit", edit_place_path(@place), class: "btn btn-primary" %>
           <%= link_to "delete", place_path(@place), method: :delete, data: { confirm: "Really? :("}, class: "btn btn-danger" %>
-        <% end %>
+          <% end %>
+          <%= link_to "", upvote_place_path(@place), method: :put, class: "btn btn-warning glyphicon glyphicon-chevron-up" %>
+          <%= @place.score %>
+          <%= link_to "", downvote_place_path(@place), method: :put, class: "btn btn-warning glyphicon glyphicon-chevron-down" %>
+          </h4>
+        
 
       <% end %>
     </div>

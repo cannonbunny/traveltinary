@@ -1,6 +1,6 @@
 class PlacesController < ApplicationController
 
-before_action :find_place, only: [:show, :edit, :update, :destroy]
+before_action :find_place, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
 before_action :find_continent, only: [:new, :create, :edit]
 
   def index
@@ -44,6 +44,16 @@ before_action :find_continent, only: [:new, :create, :edit]
   def destroy
     @place.destroy
     redirect_to root_path
+  end
+
+  def upvote
+    @place.upvote_by current_user
+    redirect_to place_path(@place)
+  end
+
+  def downvote
+    @place.downvote_by current_user
+    redirect_to place_path(@place)
   end
 
 private
