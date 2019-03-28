@@ -1,24 +1,20 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
+Project web app to document travel itineraries and sort by predefined categories
 
 * Ruby version
+2.3.3
 
-* System dependencies
+* Rails version
+5.2.2.1
 
-* Configuration
+Additional Gems
+'bootstrap-sass', '~> 3.4', '>= 3.4.1'
+'simple_form', '~> 4.1'
+'devise', '~> 4.6', '>= 4.6.1'
+'jquery-rails'
+'carrierwave', '~> 1.3', '>= 1.3.1'
+'acts_as_votable', '~> 0.12.0'
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Revised Gems
+'sqlite3', '~> 1.3.6'
