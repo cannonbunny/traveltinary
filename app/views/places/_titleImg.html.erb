@@ -3,7 +3,7 @@
   <%= image_tag("worldcolor.png", class:"worldImage") %>
   <div class="centered">
     <li class="dropdown">
-      <button class="dropdown-toggle btn btn-primary btn-lg collapse in" data-toggle="dropdown" role="button" aria-expanded="false">Inspire Me<span class="caret"></span></button>
+      <a class="dropdown-toggle btn btn-primary btn-lg collapse in" data-toggle="dropdown" role="button" aria-expanded="false">Inspire Me<span class="caret"></span></a>
       <ul class="dropdown-menu" role="menu">
         <% Continent.all.each do |continent| %>
           <li data-toggle="collapse" data-target=".mainImage" class="<%= 'active' if params[:continent] == continent.name %>">
