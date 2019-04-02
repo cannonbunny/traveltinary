@@ -1,6 +1,5 @@
 
 <%= simple_form_for ([@place, @place.reviews.build]) do |f| %>
-  <%= f.input :vote %>
   <%= f.input :comment %>
   <%= f.button :submit %>
 <% end %>
