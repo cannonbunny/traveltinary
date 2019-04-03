@@ -4,7 +4,7 @@
   <%= select_tag(:continent_id, options_for_select(@continents), :prompt => "Select continent") %>
   <%= select_tag(:activity_id, options_for_select(@activities), :prompt => "Select activity") %>
   <hr/>
-  <%= f.input :city, label: "Region/City", placeholder: "Example: Vancouver" %>
+  <%= f.input :city, label: "Title of Trip", placeholder: "Example:" %>
   <%= f.input :description, label: "Itinerary", placeholder: "Day 1: ... -> ... -> ..."%>
   <%= f.button :submit, "Add me!", class: "btn btn-success" %>
 <% end %>

@@ -15,6 +15,24 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+.imgResponse.phone {
+  display: none;
+}
+.imgResponse{
+  width: 82%;
+  display: block;
+  margin:auto;
+}
+
+@media only screen and (max-width: 600px) {
+  .imgResponse {
+    display: none;
+  }
+  .imgResponse.phone {
+    display: block;
+  }
+}
+
 h1{
   font-family: 'Noto Sans', sans-serif;
   color: #0072E5;
@@ -42,7 +60,11 @@ div p {
 .navbar-default .navbar-brand {
     color: #63299D;
     font-weight: bold;
-    font-size: 240%;
+    font-size: 4rem;
+}
+
+.navText{
+  font-size: 2rem;
 }
 
 hr{
@@ -74,35 +96,27 @@ margin: 2% auto 2% auto;
 }
 
 .reviewText{
-  border-radius: 10px;
+  border-radius: 8px;
   border-style: solid;
   border-width: 2px;
-  border-color: #DDF7FC;
+  border-color: #F2F2F2;
   padding:1%;
   margin:1%;
 }
 
 img.placeImage {
-  width: 200px;
-  height: 150px;
-  border: 3px solid #DDF7FC;
-  border-radius: 10px;
+  width: 180px;
+  height: 135px;
+  border: 3px solid #F2F2F2;
+  border-radius: 8px;
 }
 
 img.placeImageShow {
-  width: 80%;
+  width: 75%;
   height: auto;
-  border: 3px solid #DDF7FC;
-  border-radius: 10px;
+  border: 3px solid #F2F2F2;
+  border-radius: 8px;
 }
-
-img.worldImage {
-  width: 85%;
-  display: block;
-  margin:auto;
-  height: auto;
-}
-nav ul li{ float:left; list-style-type: none;}
 
 .mainImage {
   position: relative;
