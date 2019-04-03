@@ -3,7 +3,7 @@
   <%= image_tag("worldcolorNA.png", class:"imgResponse phone") %>
   <div class="centered">
     <li class="dropdown">
-      <a class="dropdown-toggle btn btn-primary btn-lg collapse in" data-toggle="dropdown" role="button" aria-expanded="false">Explore<span class="caret"></span></a>
+      <a class="titleButton dropdown-toggle btn btn-primary btn-lg collapse in" data-toggle="dropdown" role="button" aria-expanded="false">Explore<span class="caret"></span></a>
       <ul class="dropdown-menu" role="menu">
         <% Continent.all.each do |continent| %>
           <li data-toggle="collapse" data-target=".mainImage" class="<%= 'active' if params[:continent] == continent.name %>">
@@ -13,7 +13,7 @@
       </ul>
     </li>
     <li class="dropdown">
-      <a class="dropdown-toggle btn btn-info btn-lg collapse in" data-toggle="dropdown" role="button" aria-expanded="false">Inspire<span class="caret"></span></a>
+      <a class="titleButton dropdown-toggle btn btn-info btn-lg collapse in" data-toggle="dropdown" role="button" aria-expanded="false">Inspire<span class="caret"></span></a>
       <ul class="dropdown-menu" role="menu">
         <% Activity.all.each do |activity| %>
           <li data-toggle="collapse" data-target=".mainImage" class="<%= 'active' if params[:activity] == activity.activityname %>">
