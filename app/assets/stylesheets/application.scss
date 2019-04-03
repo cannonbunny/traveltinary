@@ -76,6 +76,8 @@
     width: 100%;
   }
   .navbar-default .navbar-brand {
+      padding-top:10%;
+      padding-bottom: 10%;
       color: #63299D;
       font-weight: bold;
       font-size: 6rem;
@@ -86,10 +88,15 @@
   .titleButton{
     font-size: 4rem;
   }
+
+  .portraitText{
+    font-size: 3.3rem;
+  }
+
   div p{
     font-family: 'Lora', serif;
     line-height: 2;
-    font-size: 3rem;
+    font-size: 3.3rem;
   }
   h1{
     font-family: 'Noto Sans', sans-serif;
@@ -111,7 +118,7 @@
 
   h4{
     font-family: 'Noto Sans', sans-serif;
-    font-size: 3rem;
+    font-size: 3.3rem;
   }
 }
 

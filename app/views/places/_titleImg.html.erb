@@ -7,7 +7,7 @@
       <ul class="dropdown-menu" role="menu">
         <% Continent.all.each do |continent| %>
           <li data-toggle="collapse" data-target=".mainImage" class="<%= 'active' if params[:continent] == continent.name %>">
-            <%= link_to continent.name, places_path(continent: continent.name), class:"link" %>
+            <%= link_to continent.name, places_path(continent: continent.name), class:"link portraitText" %>
           </li>
         <% end %>
       </ul>
@@ -17,7 +17,7 @@
       <ul class="dropdown-menu" role="menu">
         <% Activity.all.each do |activity| %>
           <li data-toggle="collapse" data-target=".mainImage" class="<%= 'active' if params[:activity] == activity.activityname %>">
-            <%= link_to activity.activityname, places_path(activity: activity.activityname), class:"link" %>
+            <%= link_to activity.activityname, places_path(activity: activity.activityname), class:"link portraitText" %>
           </li>
         <% end %>
       </ul>
