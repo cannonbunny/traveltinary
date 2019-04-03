@@ -1,8 +1,8 @@
 class PlacesController < ApplicationController
 
 before_action :find_place, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
-before_action :find_continent, only: [:new, :create, :edit]
-before_action :find_activity, only: [:new, :create, :edit]
+before_action :find_continent, only: [:new, :create, :edit, :update]
+before_action :find_activity, only: [:new, :create, :edit, :update]
 
   def index
     if params[:continent].blank?
@@ -28,7 +28,7 @@ before_action :find_activity, only: [:new, :create, :edit]
   def create
     @place = current_user.places.build(place_params)
     @place.continent_id = params[:continent_id]
-    @place.activites_id = params[:activites_id]
+    @place.activity_id = params[:activity_id]
     if @place.save
       redirect_to root_path
     else
@@ -41,7 +41,7 @@ before_action :find_activity, only: [:new, :create, :edit]
 
   def update
     @place.continent_id = params[:continent_id]
-    @place.activites_id = params[:activites_id]
+    @place.activity_id = params[:activity_id]
     if @place.update(place_params)
       redirect_to place_path(@place)
     else
@@ -67,7 +67,7 @@ before_action :find_activity, only: [:new, :create, :edit]
 private
 
   def place_params
-    params.require(:place).permit( :city, :description, :continent_id, :image)
+    params.require(:place).permit( :city, :description, :continent_id, :activity_id,:image)
   end
 
   def find_continent

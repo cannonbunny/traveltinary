@@ -3,11 +3,11 @@
 <% else %>
   <div class="row">
     <% @place.each do |place| %>
-      <div class="col-md-3">
+      <div class="col-md-3 col-sm-6">
         <% if place.image.url %>
           <a href="/places/<%= place.id %>"><%= image_tag place.image.url, class:"placeImage" %></a>
         <% end %>
-        <h4><%= link_to place.city, place_path(place) %></h1>
+        <h4><%= link_to place.city, place_path(place) %></h4>
       </div>
     <% end %>
   </div>

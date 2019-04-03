@@ -1,5 +1,4 @@
-
 <%= simple_form_for ([@place, @place.reviews.build]) do |f| %>
   <%= f.input :comment %>
-  <%= f.button :submit %>
+  <%= f.button :submit, "Add me!", class: "btn btn-success" %>
 <% end %>

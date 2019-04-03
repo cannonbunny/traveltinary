@@ -15,13 +15,30 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
-h1 h4{
+h1{
+  font-family: 'Noto Sans', sans-serif;
+  color: #0072E5;
+}
+
+h2{
+  font-family: 'Noto Sans', sans-serif;
+  color: #0072E5;
+}
+
+h3{
+  font-family: 'Noto Sans', sans-serif;
+  color: #0090AD;
+}
+
+h4{
   font-family: 'Noto Sans', sans-serif;
 }
 
 div p {
   font-family: 'Lora', serif;
+  line-height: 1.5;
 }
+
 .navbar-default .navbar-brand {
     color: #63299D;
     font-weight: bold;
@@ -29,10 +46,10 @@ div p {
 }
 
 hr{
-border: solid #FFCE9E 3px;
-width: 15%;
+border: dotted #FFCE9E 3px;
+width: 24%;
 border-bottom: none;
-margin: 30px auto 30px auto;
+margin: 2% auto 2% auto;
 }
 
 .formGeneration {
@@ -44,18 +61,38 @@ margin: 30px auto 30px auto;
   margin-top:5%;
 }
 
+.reviewButtonSpace {
+  text-align:right;
+}
+
+.showSpace {
+  text-align: center;
+}
+
+.reviewSpace{
+  padding-left: 5%;
+}
+
+.reviewText{
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #DDF7FC;
+  padding:1%;
+  margin:1%;
+}
+
 img.placeImage {
   width: 200px;
   height: 150px;
-  border: 3px solid #E2F6FD;
+  border: 3px solid #DDF7FC;
   border-radius: 10px;
 }
-
 
 img.placeImageShow {
   width: 80%;
   height: auto;
-  border: 3px solid #E2F6FD;
+  border: 3px solid #DDF7FC;
   border-radius: 10px;
 }
 
@@ -65,7 +102,7 @@ img.worldImage {
   margin:auto;
   height: auto;
 }
-nav ul li{ float:left; list-style-type: none; }
+nav ul li{ float:left; list-style-type: none;}
 
 .mainImage {
   position: relative;
