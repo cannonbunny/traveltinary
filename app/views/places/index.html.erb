@@ -1,25 +1,17 @@
-<% if !params[:continent] %>
+<% if !params[:continent] && !params[:activity] %>
   <%= render 'titleImg' %>
+  <%= render 'displayPlace' %>
 <% end %>
 
 <div class="col-md-10 col-md-offset-1">
 
-<h1><%= params[:continent] %></h1>
-<% if @place.count == 0 %>
-  <h4>Please add the first itinerary</h4>
-<% else %>
-
-  <div class="row">
-    <% @place.each do |place| %>
-      <div class="col-md-3">
-        <% if place.image.url %>
-          <a href="/places/<%= place.id %>"><%= image_tag place.image.url, class:"placeImage" %></a>
-        <% end %>
-        <h4><%= link_to place.city, place_path(place) %></h1>
-      </div>
-    <% end %>
-  </div>
-
+<% if params[:continent] %>
+  <h1><%= params[:continent] %></h1>
+  <%= render 'displayPlace' %>
+<% end %>
+<% if params[:activity] %>
+  <h1><%= params[:activity] %></h1>
+  <%= render 'displayPlace' %>
 <% end %>
 
 </div>

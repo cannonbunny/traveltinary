@@ -2,6 +2,7 @@ class Place < ApplicationRecord
   belongs_to :user
   belongs_to :continent
   has_many :reviews
+  belongs_to :activity
   acts_as_votable
   mount_uploader :image, ImageUploader
 
