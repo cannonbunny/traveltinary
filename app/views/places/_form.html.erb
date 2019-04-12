@@ -1,10 +1,11 @@
 <%= simple_form_for @place, html: {multipart: true} do |f| %>
+  <h5 style="font-weight:bold">Input Image</h5>
   <%= f.file_field :image %>
-  <br>
-  <%= select_tag(:continent_id, options_for_select(@continents), :prompt => "Select continent") %>
-  <%= select_tag(:activity_id, options_for_select(@activities), :prompt => "Select activity") %>
   <hr/>
-  <%= f.input :city, label: "Title of Trip", placeholder: "Example:" %>
-  <%= f.input :description, label: "Itinerary", placeholder: "Day 1: ... -> ... -> ..."%>
+  <%= select_tag(:continent_id, options_for_select(@continents),class: "btn btn-primary btn-lg", :prompt => "Select continent") %>
+  <%= select_tag(:activity_id, options_for_select(@activities),class: "btn btn-info btn-lg", :prompt => "Select activity") %>
+  <hr/>
+  <%= f.input :city, label: "City/Region/Site Name", placeholder: "New York, US/Tuscany, Italy/Machu Picchiu, Peru" %>
+  <%= f.input :description, label: "Description", placeholder: "Please add decription (eg. Main attraction, how to get there, how many days for explore .... etc)"%>
   <%= f.button :submit, "Add me!", class: "btn btn-success" %>
 <% end %>

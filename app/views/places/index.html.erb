@@ -1,19 +1,24 @@
 <% if !params[:continent] && !params[:activity] %>
   <%= render 'titleImg' %>
-<div class="col-md-10 col-md-offset-1 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+<div class="col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
   <%= render 'displayPlace' %>
 </div>
 <% end %>
 
-<div class="col-md-10 col-md-offset-1 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+<div class="col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
 
-<% if params[:continent] %>
+<% if params[:continent] && params[:activity]%>
   <h2><%= params[:continent] %></h2>
-  <%= render 'displayPlace' %>
-<% end %>
-<% if params[:activity] %>
   <h2><%= params[:activity] %></h2>
   <%= render 'displayPlace' %>
+<% else %>
+  <% if params[:continent]%>
+    <h2><%= params[:continent] %></h2>
+    <%= render 'displayPlace' %>
+  <% end %>
+  <% if params[:activity] %>
+    <h2><%= params[:activity] %></h2>
+    <%= render 'displayPlace' %>
+  <% end %>
 <% end %>
-
 </div>

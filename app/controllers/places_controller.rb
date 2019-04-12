@@ -13,7 +13,12 @@ before_action :find_activity, only: [:new, :create, :edit, :update]
       end
     else
       if params[:continent]
-        @place = Place.where(:continent_id => Continent.find_by(name: params[:continent]).id).order("created_at DESC")
+        if params[:activity].blank?
+          @place = Place.where(:continent_id => Continent.find_by(name: params[:continent]).id).order("created_at DESC")
+        else
+          @place = Place.where(:activity_id => Activity.find_by(activityname: params[:activity]).id)
+          @place = @place.where(:continent_id => Continent.find_by(name: params[:continent]).id).order("created_at DESC")
+        end
       end
     end
   end

@@ -1,13 +1,15 @@
 <div class="formGeneration col-md-8 col-md-offset-2"">
   <h3>Edit Itinerary ?</h3>
+  <br>
   <%= simple_form_for @place, html: {multipart: true} do |f| %>
+    <h5 style="font-weight:bold">Input Image (re-upload if you want to switch?)</h5>
     <%= f.file_field :image %>
-    <br>
+    <hr/>
     <%= f.select :continent_id, @continents %>
     <%= f.select :activity_id, @activities %>
     <hr/>
-    <%= f.input :city, label: "Title of Trip" %>
-    <%= f.input :description, label: "Itinerary" %>
-    <%= f.button :submit, "Change me!", class: "btn btn-success" %>
+    <%= f.input :city, label: "City/Region/Site Name", placeholder: "New York, US/Tuscany, Italy/Machu Picchiu, Peru" %>
+    <%= f.input :description, label: "Description", placeholder: "Please add decription (eg. Main attraction, how to get there, how many days for explore .... etc)"%>
+    <%= f.button :submit, "Add me!", class: "btn btn-success" %>
   <% end %>
 </div>
